@@ -15,6 +15,22 @@ function asyncNumberChecker(n) {
 // Handle success with .then() and errors with .catch()
 
 asyncNumberChecker(10)
+.then((message) => {
+  console.log("success!")
+  console.log(message)
+})
+.catch((err) => {
+  console.log("failure")
+  console.log(err)
+})
 
 
 asyncNumberChecker(5)
+.then((message) => {
+  console.log("success!")
+  console.log(message)
+})
+.catch((err) => {
+  console.log("failure")
+  console.log(err)
+})
