@@ -1,6 +1,19 @@
 function whatToEat(timeOfDay) {
   // Create a new promise and return it here
-  
+  return new Promise((resolve, reject) => {
+    if (timeOfDay === 'breakfast') {
+      resolve('eggs')
+    }
+    if (timeOfDay === 'lunch') {
+      resolve('grilled cheese')
+    }
+    if (timeOfDay === 'dinner') {
+      resolve('pizza')
+    }
+    else {
+      reject("I'm not hungry right now.")
+    }
+  })
 }
 
 
@@ -10,6 +23,11 @@ whatToEat('lunch')
 
 // If the `timeOfDay` is 'breakfast', 'lunch', or 'dinner' 
 // resolve the promise with your favorite food for that time. 
-
+whatToEat('breakfast')
+.then(message => console.log(message))
+.catch(err => console.log(err))
 // If the `timeOfDay` is anything else reject the promise with 
 // the 'message' I'm not hungry right now.  
+whatToEat('snacktime')
+.then(message => console.log(message))
+.catch(err => console.log(err))
