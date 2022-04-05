@@ -40,7 +40,7 @@ greet(7)
 .then(str => console.log(str)) // Log the results of uppercaser()
 .catch(err => console.log(err))
 // Challenge: get uppercaser() to fail by passing a non string value
-// What happens? 
+// What happens? fails and says the arguemnt must be a string
 uppercaser(7)
 .then((str) => {
   console.log(str)
@@ -49,3 +49,4 @@ uppercaser(7)
 
 // Challenge: Notice there is only a single .catch() at the end. 
 // Explain the behavior?
+//Catch seems to be the bucket that grabs any errors that happen during a promise chain. If any errors occur, it'll bypass any further thens and hits the catch block. 
