@@ -37,12 +37,8 @@ function getGeolocation(options) {
 
 getGeolocation(options)
   .then((pos) => {
-    const { latitude, longitude, accuracy } = pos.coords;
-    console.log("Your current position is:");
-    console.log(`Latitude : ${latitude}`);
-    console.log(`Longitude: ${longitude}`);
-    console.log(`More or less ${accuracy} meters.`);
+    onsuccess(pos)
   })
   .catch((err) => {
-    console.warn(`ERROR(${err.code}): ${err.message}`);
+    onerror(err)
   });
